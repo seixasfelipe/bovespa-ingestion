@@ -10,6 +10,7 @@ module HistoricoAtivos
       ativo.tipo_mercado = read_tipo_mercado row
       ativo.nome = read_nome row
       ativo.especificacao = read_especificacao row
+      ativo.prazo_termo = read_prazo_termo row
       ativo
     end
 
@@ -38,6 +39,10 @@ module HistoricoAtivos
 
     def read_especificacao(row)
       row[39..48]
+    end
+
+    def read_prazo_termo(row)
+      row[49..51].to_i
     end
 
   end
