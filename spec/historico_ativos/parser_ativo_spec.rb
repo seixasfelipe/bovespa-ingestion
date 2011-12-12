@@ -3,7 +3,7 @@ require 'spec_helper'
 module HistoricoAtivos
   describe ParserAtivo do
     before(:each) do
-      sample_row = "012003021202VALE3      |010VALE R DOCE|ON           |R$  000000001050100000000105010000000010250000000001036800000000103210000000010321000000001043800142000000000000069500000000000720641400000000000000009999123100000010000000000000BRVALEACNOR0159"
+      sample_row = "012003021202VALE3      |010VALE R DOCE|ON       |  |R$  000000001050100000000105010000000010250000000001036800000000103210000000010321000000001043800142000000000000069500000000000720641400000000000000009999123100000010000000000000BRVALEACNOR0159"
       parser = ParserAtivo.new
       @ativo = parser.parse sample_row
     end
@@ -26,6 +26,10 @@ module HistoricoAtivos
 
     it "deveria extrair ativo contendo nome" do
       @ativo.nome.should == "VALE R DOCE|"
+    end
+
+    it "deveria extrair ativo contendo especificacao" do
+      @ativo.especificacao.should == "ON       |"
     end
   end
 end
