@@ -8,6 +8,7 @@ module HistoricoAtivos
       ativo.codigo_bdi = read_codigo_bdi row
       ativo.codigo = read_codigo row
       ativo.tipo_mercado = read_tipo_mercado row
+      ativo.nome = read_nome row
       ativo
     end
 
@@ -28,6 +29,10 @@ module HistoricoAtivos
 
     def read_tipo_mercado(row)
       row[24..26].to_i
+    end
+
+    def read_nome(row)
+      row[27..38]
     end
 
   end
