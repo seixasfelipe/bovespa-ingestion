@@ -6,6 +6,7 @@ module HistoricoAtivos
       ativo = Ativo.new
       ativo.data = read_data row
       ativo.codigo_bdi = read_codigo_bdi row
+      ativo.codigo = read_codigo row
       ativo
     end
 
@@ -18,6 +19,10 @@ module HistoricoAtivos
 
     def read_codigo_bdi(row)
       row[10..11].to_i
+    end
+
+    def read_codigo(row)
+      row[12..23].strip
     end
 
   end
