@@ -1,4 +1,5 @@
 require 'date'
+require 'bigdecimal'
 
 module HistoricoAtivos
   class ParserAtivo
@@ -11,6 +12,8 @@ module HistoricoAtivos
       ativo.nome = read_nome row
       ativo.especificacao = read_especificacao row
       ativo.prazo_termo = read_prazo_termo row
+      ativo.moeda_referencia = read_moeda_referencia row
+      ativo.preco_abertura = read_preco_abertura row
       ativo
     end
 
@@ -34,15 +37,26 @@ module HistoricoAtivos
     end
 
     def read_nome(row)
-      row[27..38]
+      row[27..38].strip
     end
 
     def read_especificacao(row)
-      row[39..48]
+      row[39..48].strip
     end
 
     def read_prazo_termo(row)
       row[49..51].to_i
+    end
+
+    def read_moeda_referencia(row)
+      row[52..55].strip
+    end
+
+    def read_preco_abertura(row)
+      preco = row[56..68].to_i
+      preco_s = preco.to_s
+      preco_s.insert(preco_s.size - 2, '.')
+      BigDecimal.new(preco_s)
     end
 
   end
