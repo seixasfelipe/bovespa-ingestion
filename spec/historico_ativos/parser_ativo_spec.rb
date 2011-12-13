@@ -45,39 +45,39 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo preco maximo" do
-      pending
+      @ativo.preco_maximo.should == 105.01
     end
 
     it "deveria extrair ativo contendo preco minimo" do
-      pending
+      @ativo.preco_minimo.should == 102.50
     end
 
     it "deveria extrair ativo contendo preco medio" do
-      pending
+      @ativo.preco_medio.should == 103.68
     end
 
     it "deveria extrair ativo contendo preco ultimo" do
-      pending
+      @ativo.preco_ultimo.should == 103.21
     end
 
     it "deveria extrair ativo contendo preco da melhor oferta de compra" do
-      pending
+      @ativo.preco_melhor_oferta_compra.should == 103.21
     end
 
     it "deveria extrair ativo contendo preco da melhor oferta de venda" do
-      pending
+      @ativo.preco_melhor_oferta_venda.should == 104.38
     end
 
     it "deveria extrair ativo contendo total de negocios" do
-      pending
+      @ativo.total_negocios.should == 142
     end
 
     it "deveria extrair ativo contendo quantidade de titulos negociados" do
-      pending
+      @ativo.quantidade_titulos_negociados.should == 69500
     end
 
     it "deveria extrair ativo contendo volume de negocios" do
-      pending
+      @ativo.volume_negocios.should == 720641400
     end
   end
 end
