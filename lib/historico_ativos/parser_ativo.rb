@@ -4,6 +4,10 @@ require 'bigdecimal'
 module HistoricoAtivos
   class ParserAtivo
     def parse(row)
+      read_ativo(row) if row.start_with?("01")
+    end
+    
+    def read_ativo(row)
       ativo = Ativo.new
       ativo.data = read_data row
       ativo.codigo_bdi = read_codigo_bdi row

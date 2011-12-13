@@ -8,6 +8,14 @@ module HistoricoAtivos
       @ativo = parser.parse sample_row
     end
 
+    it "deveria retornar nil se a linha nao comecar com 01" do
+      sample_row = "052003021202VALE3      |010VALE R DOCE|ON       |  1R$ |000000001050100000000105010000000010250000000001036800000000103210000000010321000000001043800142000000000000069500000000000720641400000000000000009999123100000010000000000000BRVALEACNOR0159"
+      parser = ParserAtivo.new
+      ativo = parser.parse sample_row
+
+      ativo.should be_nil
+    end
+
     it "deveria extrair ativo contendo data" do
       @ativo.data.to_s.should eql Date.new(2003, 2, 12).to_s
     end
