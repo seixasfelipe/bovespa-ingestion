@@ -1,2 +1,5 @@
 require 'historico_ativos/ativo'
 require 'historico_ativos/parser_ativo'
+require 'historico_ativos/carrega_historico'
+require 'historico_ativos/parser_header'
+require 'historico_ativos/parser_trailer'
