@@ -33,5 +33,13 @@ module HistoricoAtivos
       loader = CarregaHistorico.new @parser_h_mock, @parser_t_mock, @parser_a_mock
       loader.load @file
     end
+
+    it "deveria retornar dois ativos ao carregar o arquivo" do
+      loader = CarregaHistorico.new @parser_h_mock, @parser_t_mock, @parser_a_mock
+      historico = loader.load @file
+      historico.ativos.size.should == 2
+      historico.ativos[0].codigo.should == "VALE3"
+      historico.ativos[1].codigo.should == "VALE5T"
+    end
   end
 end
