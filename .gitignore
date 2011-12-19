@@ -2,3 +2,4 @@
 *.swp
 .rspec
 .autotest
+.DS_Store
