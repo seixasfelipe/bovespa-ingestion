@@ -3,3 +3,4 @@
 .rspec
 .autotest
 .DS_Store
+db/*.sqlite3
