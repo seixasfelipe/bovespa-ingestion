@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'active_record'
 
 module HistoricoAtivos
   describe Historico do

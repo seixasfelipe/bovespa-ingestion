@@ -1,5 +1,5 @@
 module HistoricoAtivos
-  class Ativo
+  class Ativo < ActiveRecord::Base
     attr_accessor :data, :codigo_bdi, :codigo, :tipo_mercado,
       :nome, :especificacao, :prazo_termo, :moeda_referencia,
       :preco_abertura, :preco_maximo, :preco_minimo, :preco_medio,
