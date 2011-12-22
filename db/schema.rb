@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20111221001450) do
 
-  create_table "Historico", :force => true do |t|
+  create_table "historico_ativos", :force => true do |t|
     t.string   "nome_arquivo"
     t.string   "codigo_origem"
     t.date     "data_geracao"
