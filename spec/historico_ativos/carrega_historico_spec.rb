@@ -53,5 +53,13 @@ module HistoricoAtivos
       historico = loader.load @file
       historico.nome_arquivo.should == "COTAHIST.2003"
     end
+
+    it "deveria persistir o historico" do
+      historico = double(Historico).as_null_object
+      historico.should_receive(:save).once
+
+      loader = CarregaHistorico.new @parser_h_mock, @parser_t_mock, @parser_a_mock
+      loader.persist historico
+    end
   end
 end

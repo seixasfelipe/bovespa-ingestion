@@ -26,5 +26,9 @@ module HistoricoAtivos
 
       historico
     end
+
+    def persist(historico)
+      historico.save
+    end
   end
 end
