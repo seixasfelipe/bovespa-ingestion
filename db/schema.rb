@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223004105) do
+ActiveRecord::Schema.define(:version => 20111223023840) do
 
   create_table "ativos", :force => true do |t|
     t.date     "data"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20111223004105) do
     t.date     "data_importacao"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantidade_ativos"
   end
 
 end

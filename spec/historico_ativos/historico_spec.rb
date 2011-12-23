@@ -11,6 +11,12 @@ module HistoricoAtivos
       header
     }
 
+    let(:trailer) {
+      trailer = Trailer.new
+      trailer.quantidade_ativos = 553
+      trailer
+    }
+
     it "deveria carregar dados contidos no header" do
       historico = Historico.new
       historico.import_header header
@@ -18,6 +24,13 @@ module HistoricoAtivos
       historico.nome_arquivo.should == "COTA.HIST2003"
       historico.codigo_origem.should == "BOVESPA"
       historico.data_geracao.to_s.should eql Date.new(2004, 05, 31).to_s
+    end
+
+    it "deveria carregar dados contidos no trailer" do
+      historico = Historico.new
+      historico.import_trailer trailer
+
+      historico.quantidade_ativos == 553
     end
 
     it "deveria ser activerecord" do
