@@ -5,6 +5,5 @@ require 'historico_ativos'
 module HistoricoAtivos
   loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
   historico = loader.load 'sample/sample_cota_hist_2003.txt'
-  puts historico.nome_arquivo
   historico.save
 end

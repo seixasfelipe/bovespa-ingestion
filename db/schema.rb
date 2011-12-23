@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223023840) do
+ActiveRecord::Schema.define(:version => 20111223131703) do
 
   create_table "ativos", :force => true do |t|
     t.date     "data"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20111223023840) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "historico_ativo_id"
+    t.integer  "prazo_termo"
   end
 
   add_index "ativos", ["historico_ativo_id"], :name => "index_ativos_on_historico_ativo_id"
