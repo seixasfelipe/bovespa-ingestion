@@ -24,7 +24,7 @@ module HistoricoAtivos
     end
 
     it "deveria parsear trailer uma vez" do
-      @parser_t_mock.should_receive(:parse).once
+      @parser_t_mock.should_receive(:parse).once.and_return(Trailer.new)
 
       loader = CarregaHistorico.new @parser_h_mock, @parser_t_mock, @parser_a_mock
       loader.load @file
@@ -54,6 +54,17 @@ module HistoricoAtivos
       loader = CarregaHistorico.new @parser_h_mock, @parser_t_mock, @parser_a_mock
       historico = loader.load @file
       historico.nome_arquivo.should == "COTAHIST.2003"
+    end
+
+    it "deveria importar o trailer ao carregar o arquivo" do
+      trailer = double(Trailer).as_null_object
+      trailer.stub(:quantidade_ativos).and_return(553)
+
+      @parser_t_mock.stub(:parse).and_return(trailer)
+
+      loader = CarregaHistorico.new @parser_h_mock, @parser_t_mock, @parser_a_mock
+      historico = loader.load @file
+      historico.quantidade_ativos.should == 553
     end
 
     it "deveria persistir o historico" do

@@ -19,7 +19,7 @@ module HistoricoAtivos
       file.each { |line|
          historico.import_header @parser_header.parse(line) if line.start_with?("00")
          historico.ativos << @parser_ativo.parse(line) if line.start_with?("01")
-         @parser_trailer.parse(line) if line.start_with?("99")
+         historico.import_trailer @parser_trailer.parse(line) if line.start_with?("99")
       }
 
       historico
