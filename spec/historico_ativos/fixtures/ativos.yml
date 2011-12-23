@@ -1,0 +1,19 @@
+one:
+  data: <%= Time.now %>
+  codigo_bdi: 1
+  codigo: 1
+  tipo_mercado: 1
+  nome: TEST ONE
+  especificacao: 2
+  prazo_termo: <%= Time.now %>
+  moeda_referencia: EUR
+  preco_abertura: 67.89
+  preco_maximo: 156.99
+  preco_minimo: 2.67
+  preco_medio: 10.567
+  preco_ultimo: 22.6
+  preco_melhor_oferta_compra: 156.78
+  preco_melhor_oferta_venda: 50.67
+  total_negocios: 500
+  quantidade_titulos_negociados: 1000
+  volume_negocios: 10
