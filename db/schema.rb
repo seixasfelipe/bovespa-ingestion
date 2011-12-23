@@ -11,9 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111221001450) do
+ActiveRecord::Schema.define(:version => 20111223004105) do
 
-  create_table "Historico", :force => true do |t|
+  create_table "ativos", :force => true do |t|
+    t.date     "data"
+    t.string   "codigo_bdi"
+    t.string   "codigo"
+    t.string   "tipo_mercado"
+    t.string   "nome"
+    t.string   "especificacao"
+    t.string   "moeda_referencia"
+    t.decimal  "preco_abertura"
+    t.decimal  "preco_maximo"
+    t.decimal  "preco_minimo"
+    t.decimal  "preco_medio"
+    t.decimal  "preco_ultimo"
+    t.decimal  "preco_melhor_oferta_compra"
+    t.decimal  "preco_melhor_oferta_venda"
+    t.decimal  "total_negocios"
+    t.decimal  "quantidade_titulos_negociados"
+    t.decimal  "volume_negocios"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "historico_ativo_id"
+  end
+
+  add_index "ativos", ["historico_ativo_id"], :name => "index_ativos_on_historico_ativo_id"
+
+  create_table "historico_ativos", :force => true do |t|
     t.string   "nome_arquivo"
     t.string   "codigo_origem"
     t.date     "data_geracao"

@@ -1,3 +1,4 @@
+require ::File.expand_path('../../config/environment',  __FILE__)
 require 'historico_ativos/ativo'
 require 'historico_ativos/parser_ativo'
 require 'historico_ativos/carrega_historico'

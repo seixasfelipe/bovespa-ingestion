@@ -1,6 +1,6 @@
 class CreateHistorico < ActiveRecord::Migration
   def self.up
-    create_table :Historico do |t|
+    create_table :historico_ativos do |t|
       t.string :nome_arquivo
       t.string :codigo_origem
       t.date :data_geracao
@@ -10,6 +10,6 @@ class CreateHistorico < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :Historico
+    drop_table :historico_ativos
   end
 end
