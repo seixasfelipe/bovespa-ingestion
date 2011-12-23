@@ -24,3 +24,23 @@ Contributing
 
 3) Send a pull request
 
+Running
+-------
+
+Run the test application:
+
+	$ bin/carregar_historico
+	
+Testing
+-------
+
+We use rspec, so:
+
+	$ rspec spec
+
+
+Prerequisites
+-------------
+
+Tested with Ruby 1.9.2
+
