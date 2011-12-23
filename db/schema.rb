@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111222192119) do
+ActiveRecord::Schema.define(:version => 20111223004105) do
 
   create_table "ativos", :force => true do |t|
     t.date     "data"
@@ -33,7 +33,10 @@ ActiveRecord::Schema.define(:version => 20111222192119) do
     t.decimal  "volume_negocios"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "historico_ativo_id"
   end
+
+  add_index "ativos", ["historico_ativo_id"], :name => "index_ativos_on_historico_ativo_id"
 
   create_table "historico_ativos", :force => true do |t|
     t.string   "nome_arquivo"

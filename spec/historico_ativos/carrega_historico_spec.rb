@@ -7,7 +7,9 @@ module HistoricoAtivos
       @file = "sample/sample_cota_hist_2003.txt"
       @parser_h_mock = double(ParserHeader).as_null_object
       @parser_t_mock = double(ParserTrailer).as_null_object
-      @parser_a_mock = ParserAtivo.new
+      @parser_a_mock = double(ParserAtivo).as_null_object
+
+      @parser_a_mock.stub(:parse).and_return(Ativo.new)
     end
 
     it "deveria carregar o arquivo de exemplo" do
@@ -36,7 +38,7 @@ module HistoricoAtivos
     end
 
     it "deveria retornar dois ativos ao carregar o arquivo" do
-      loader = CarregaHistorico.new @parser_h_mock, @parser_t_mock, @parser_a_mock
+      loader = CarregaHistorico.new @parser_h_mock, @parser_t_mock, ParserAtivo.new
       historico = loader.load @file
       historico.ativos.size.should == 2
       historico.ativos[0].codigo.should == "VALE3"
