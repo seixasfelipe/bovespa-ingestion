@@ -8,10 +8,15 @@ module HistoricoAtivos
   sample_file = ARGV[0] if ARGV.size > 0
 
   puts "Carregando historico do arquivo: #{sample_file}"
+
+  start_time = Time.now
   
   loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
   historico = loader.load sample_file 
   loader.persist historico
 
-  puts "Historico carregado!"
+  end_time = Time.now 
+  elapsed_time = (end_time - start_time) * 1000.0
+
+  puts "Historico carregado em #{elapsed_time} ms!"
 end
