@@ -11,7 +11,7 @@ module HistoricoAtivos
   
   loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
   historico = loader.load sample_file 
-  historico.save
+  loader.persist historico
 
   puts "Historico carregado!"
 end
