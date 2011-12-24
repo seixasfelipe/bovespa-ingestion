@@ -3,7 +3,15 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'historico_ativos'
 
 module HistoricoAtivos
+
+  sample_file = 'sample/sample_cota_hist_2003.txt'
+  sample_file = ARGV[0] if ARGV.size > 0
+
+  puts "Carregando historico do arquivo: #{sample_file}"
+  
   loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
-  historico = loader.load 'sample/sample_cota_hist_2003.txt'
+  historico = loader.load sample_file 
   historico.save
+
+  puts "Historico carregado!"
 end
