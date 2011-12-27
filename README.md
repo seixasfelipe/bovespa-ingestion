@@ -1,5 +1,7 @@
-Visual Invest
+Bovespa Ingestion
 =============
+
+An importer/parser of BM&F Bovespa historical stock quotations files.
 
 Introduction
 ------------
@@ -38,6 +40,9 @@ We use rspec, so:
 
 	$ rspec spec
 
+or simply:
+
+  $ rake
 
 Prerequisites
 -------------

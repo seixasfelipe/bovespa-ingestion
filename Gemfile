@@ -1,9 +1,11 @@
 source :rubygems
 
-gem 'rspec'
-
-gem 'activerecord'
-
+gem 'rake'
+gem 'activerecord', ">=3"
 gem 'standalone_migrations'
-gem 'sqlite3'
 
+group :dev do
+  gem 'rspec', "~>2"
+  gem 'sqlite3'
+  gem 'jeweler', "~> 1.6.4"
+end
