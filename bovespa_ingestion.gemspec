@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "archives/SeriesHistoricas_Layout.pdf",
     "bin/carregar_historico",
+    "bovespa_ingestion.gemspec",
     "config/environment.rb",
     "db/config.yml",
     "db/migrate/20111221001450_create_historico.rb",
