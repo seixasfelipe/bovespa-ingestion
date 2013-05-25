@@ -1,6 +1,6 @@
 module HistoricoAtivos
   class Historico < ActiveRecord::Base
-    set_table_name "historico_ativos"
+    self.table_name = "historico_ativos"
 
     has_many :ativos
 
