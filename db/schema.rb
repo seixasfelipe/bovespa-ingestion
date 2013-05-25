@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
     t.decimal  "total_negocios"
     t.decimal  "quantidade_titulos_negociados"
     t.decimal  "volume_negocios"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "historico_id"
     t.integer  "prazo_termo"
   end
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
     t.string   "nome_arquivo"
     t.string   "codigo_origem"
     t.date     "data_geracao"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "quantidade_ativos"
   end
 
