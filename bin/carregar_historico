@@ -13,6 +13,9 @@ module HistoricoAtivos
   
   loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
   historico = loader.load sample_file 
+
+  puts "Total de ativos carregados: #{historico.ativos.length}"
+
   loader.persist historico
 
   end_time = Time.now 

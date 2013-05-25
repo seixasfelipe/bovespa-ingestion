@@ -1,8 +1,11 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: postgresql
+  database: bovespa_ingestion
+  host: localhost
+  username: root
+  password:
+  encoding: unicode
   pool: 5
-  timeout: 5000
 
 production:
   adapter: mysql
