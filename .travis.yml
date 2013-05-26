@@ -3,3 +3,5 @@ rvm:
   - 1.9.3
 env: 
   - APP_ENV=test
+before_script:
+  - rake db:migrate
