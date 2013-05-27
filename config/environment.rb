@@ -1,13 +1,11 @@
 require 'active_record'
-require 'yaml'
+require 'rails'
+require 'standalone_migrations'
 
-# by default, app environment is development
-ENV['APP_ENV'] ||= 'development'
+if !ENV["RAILS_ENV"]
+  ENV["RAILS_ENV"] = ENV["DB"] || ENV["RACK_ENV"] || Rails.env || "development"
+end
 
-config_path = ::File.expand_path('../../config/database.yml',  __FILE__)
-db_config = YAML.load_file(config_path)
-
-ActiveRecord::Base.establish_connection(
-  db_config[ENV['APP_ENV']]
-  )
+configuration = StandaloneMigrations::MinimalRailtieConfig.config.database_configuration[Rails.env] 
+ActiveRecord::Base.establish_connection(configuration)
 

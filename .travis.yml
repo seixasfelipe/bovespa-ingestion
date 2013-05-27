@@ -2,6 +2,6 @@ language: ruby
 rvm:
   - 1.9.3
 env: 
-  - APP_ENV=test
+  - RAILS_ENV=test
 before_script:
   - rake db:migrate

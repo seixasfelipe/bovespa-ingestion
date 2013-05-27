@@ -8,26 +8,8 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 
-begin
-  require 'tasks/standalone_migrations'
-rescue LoadError => e
-  puts "gem install standalone_migrations to get db:migrate:* tasks! (Error: #{e})"
-end
-
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "bovespa_ingestion"
-  gem.homepage = "http://github.com/seixasfelipe/bovespa_ingestion"
-  gem.license = "MIT"
-  gem.summary = "An importer of historical stock quotations from BM&F Bovespa"
-  gem.description = "An importer of historical stock quotations from BM&F Bovespa. It reads historical files of daily stock quotations, parses each line and inserts into database for future use."
-  gem.email = "seixasfelipe@gmail.com"
-  gem.authors = ["Felipe Seixas", "Rodrigo Fraga"]
-  gem.executables = ['carregar_historico']
-  # dependencies defined in Gemfile
-end
-Jeweler::RubygemsDotOrgTasks.new
+require 'standalone_migrations'
+StandaloneMigrations::Tasks.load_tasks
 
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new :rspec do |t|
@@ -36,13 +18,3 @@ RSpec::Core::RakeTask.new :rspec do |t|
 end
 
 task default: :rspec
-
-require 'rake/task'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "bovespa_ingestion #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end

@@ -7,3 +7,4 @@ require 'historico_ativos/parser_trailer'
 require 'historico_ativos/header'
 require 'historico_ativos/historico'
 require 'historico_ativos/trailer'
+
