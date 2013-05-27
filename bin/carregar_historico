@@ -24,7 +24,10 @@ module HistoricoAtivos
     command = ARGV[0]
   
     if command == 'install'
-      system("rake db:migrate")
+      require 'rake'
+      StandaloneMigrations::Tasks.load_tasks
+      Rake::Task['db:migrate'].invoke
+      # system("rake db:migrate")
     elsif command == 'import'
 
       if ARGV.size == 1
