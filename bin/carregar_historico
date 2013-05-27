@@ -4,22 +4,27 @@ require 'historico_ativos'
 
 module HistoricoAtivos
 
-  sample_file = 'sample/sample_cota_hist_2003.txt'
-  sample_file = ARGV[0] if ARGV.size > 0
+  if ARGV.size <= 0
+    puts "Uso: carregar_historico [nome do arquivo]"
+    puts "     exemplo: carregar_historico sample/sample_cota_hist_2003.txt"
+  else
+    sample_file = ARGV[0]
 
-  puts "Carregando historico do arquivo: #{sample_file}"
+    puts "Carregando historico do arquivo: #{sample_file}"
 
-  start_time = Time.now
-  
-  loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
-  historico = loader.load sample_file 
+    start_time = Time.now
+    
+    loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
+    historico = loader.load sample_file 
 
-  puts "Total de ativos carregados: #{historico.ativos.length}"
+    puts "Total de ativos carregados: #{historico.ativos.length}"
 
-  loader.persist historico
+    loader.persist historico
 
-  end_time = Time.now 
-  elapsed_time = (end_time - start_time) * 1000.0
+    end_time = Time.now 
+    elapsed_time = (end_time - start_time) * 1000.0
 
-  puts "Historico carregado em #{elapsed_time} ms!"
+    puts "Historico carregado em #{elapsed_time} ms!"
+  end
+
 end

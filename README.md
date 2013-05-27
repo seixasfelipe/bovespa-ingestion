@@ -11,27 +11,24 @@ Installing
 ----------
 
 Install bundler:
+
 	`$ gem install bundler`
 
 Enter the cloned dir and fetch dependencies:
+
 	`$ bundler install`
 
 Running
 -------
 
-Run application with sample file (sample/sample_cota_hist_2003.txt):
-	`$ ./bin/carregar_historico`
+Run application with real BM&F Bovespa historical file, just pass it as argument (for instance):
 
-or to run it with real BM&F Bovespa historical file, just pass it as argument (for instance):
   `$ ./bin/carregar_historico sample/DemoCotacoesHistoricas12022003.txt`
 	
 Testing
 -------
 
-We use rspec, so:
-	`$ rspec spec`
-
-or simply:
+Simply do:
   `$ rake`
 
 Getting real historical data files
@@ -69,9 +66,9 @@ It uses Postgres as development database instead of Sqlite3 because it is faster
 Boring legal stuff
 ------------------
 
-The MIT License (MIT)
+(the MIT license)
 
-Copyright (c) 2013 Felipe Seixas <seixasfelipe@gmail.com> and contributors
+Copyright (c) 2013 Felipe Seixas and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
