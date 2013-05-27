@@ -25,9 +25,6 @@ Jeweler::Tasks.new do |gem|
   gem.email = "seixasfelipe@gmail.com"
   gem.authors = ["Felipe Seixas", "Rodrigo Fraga"]
   gem.executables = ['carregar_historico']
-  gem.files.exclude 'archives'
-  gem.files.exclude 'sample'
-  gem.files.exclude 'spec'
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

@@ -8,3 +8,4 @@ db/*.sqlite3
 archives/COTAHIST*.*
 pkg
 Gemfile.lock
+*.gem
