@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Felipe Seixas", "Rodrigo Fraga"]
   s.date = "2013-05-27"
-  s.description = "An importer of historical stock quotations from BM&F Bovespa"
+  s.description = "An importer of historical stock quotations from BM&F Bovespa. It reads historical files of daily stock quotations, parses each line and inserts into database for future use."
   s.email = "seixasfelipe@gmail.com"
   s.executables = ["carregar_historico"]
   s.extra_rdoc_files = [
