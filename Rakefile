@@ -21,7 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/seixasfelipe/bovespa_ingestion"
   gem.license = "MIT"
   gem.summary = "An importer of historical stock quotations from BM&F Bovespa"
-  gem.description = "An importer of historical stock quotations from BM&F Bovespa"
+  gem.description = "An importer of historical stock quotations from BM&F Bovespa. It reads historical files of daily stock quotations, parses each line and inserts into database for future use."
   gem.email = "seixasfelipe@gmail.com"
   gem.authors = ["Felipe Seixas", "Rodrigo Fraga"]
   gem.executables = ['carregar_historico']
