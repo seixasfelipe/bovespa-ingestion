@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
     "README.md"
   ]
   s.files = [
+    ".standalone_migrations",
     ".travis.yml",
     "Gemfile",
     "LICENSE",
