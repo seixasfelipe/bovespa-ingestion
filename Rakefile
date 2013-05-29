@@ -18,3 +18,12 @@ RSpec::Core::RakeTask.new :rspec do |t|
 end
 
 task default: :rspec
+
+task :build do
+  system "gem build bovespa_ingestion.gemspec"
+end
+
+require 'historico_ativos/version' 
+task :release => :build do
+  system "gem push bundler-#{HistoricoAtivos::VERSION}.gem"
+end
