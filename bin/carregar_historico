@@ -26,6 +26,11 @@ module HistoricoAtivos
     if command == 'install'
       require 'rake'
       StandaloneMigrations::Tasks.load_tasks
+
+      migrate_path = File.expand_path("../../db/migrate", __FILE__)
+      paths = Rails.application.config.paths
+      paths.add "db/migrate", :with => migrate_path
+      
       Rake::Task['db:migrate'].invoke
       # system("rake db:migrate")
     elsif command == 'import'
