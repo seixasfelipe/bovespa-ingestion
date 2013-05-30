@@ -21,7 +21,7 @@ module HistoricoAtivos
       ativo.max_price = read_max_price row
       ativo.min_price = read_min_price row
       ativo.medium_price = read_medium_price row
-      ativo.preco_ultimo = read_preco_ultimo row
+      ativo.last_price = read_last_price row
       ativo.preco_melhor_oferta_compra = read_preco_melhor_oferta_compra row
       ativo.preco_melhor_oferta_venda = read_preco_melhor_oferta_venda row
       ativo.total_negocios = read_total_negocios row
@@ -81,7 +81,7 @@ module HistoricoAtivos
       converts_to_big_decimal row[95..107].to_i
     end
     
-    def read_preco_ultimo(row)
+    def read_last_price(row)
       converts_to_big_decimal row[108..120].to_i
     end
     
