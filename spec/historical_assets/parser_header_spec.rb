@@ -20,7 +20,7 @@ module HistoricoAtivos
       @header.filename.should == "COTAHIST.2003"
     end
 
-    it "deveria extrair header contendo codigo origem" do
+    it "deveria extrair header contendo code origem" do
       @header.origin_code.should == "BOVESPA"
     end
     

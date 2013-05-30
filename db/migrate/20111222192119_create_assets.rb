@@ -3,7 +3,7 @@ class CreateAssets < ActiveRecord::Migration
     create_table :ativos do |t|
       t.date :date
       t.string :bdi_code
-      t.string :codigo
+      t.string :code
       t.string :market_type
       t.string :nome
       t.string :especificacao

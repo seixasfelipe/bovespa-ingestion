@@ -20,12 +20,12 @@ module HistoricoAtivos
       @ativo.date.to_s.should eql Date.new(2003, 2, 12).to_s
     end
 
-    it "deveria extrair ativo contendo codigo BDI" do
+    it "deveria extrair ativo contendo code BDI" do
       @ativo.bdi_code.should == 02
     end
     
-    it "deveria extrair ativo contendo codigo" do
-      @ativo.codigo.should == "VALE3      |"
+    it "deveria extrair ativo contendo code" do
+      @ativo.code.should == "VALE3      |"
     end
     
     it "deveria extrair ativo contendo tipo de mercado" do

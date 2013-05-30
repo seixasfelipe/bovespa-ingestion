@@ -47,8 +47,8 @@ module HistoricoAtivos
       historico = loader.load @file
       
       historico.ativos.size.should == 2
-      historico.ativos[0].codigo.should == "VALE3"
-      historico.ativos[1].codigo.should == "VALE5T"
+      historico.ativos[0].code.should == "VALE3"
+      historico.ativos[1].code.should == "VALE5T"
     end
 
     it "deveria importar o header ao carregar o arquivo" do
