@@ -18,7 +18,7 @@ module HistoricoAtivos
       ativo.prazo_termo = read_prazo_termo row
       ativo.currency_ref = read_currency_ref row
       ativo.opening_price = read_opening_price row
-      ativo.preco_maximo = read_preco_maximo row
+      ativo.max_price = read_max_price row
       ativo.preco_minimo = read_preco_minimo row
       ativo.preco_medio = read_preco_medio row
       ativo.preco_ultimo = read_preco_ultimo row
@@ -69,7 +69,7 @@ module HistoricoAtivos
       converts_to_big_decimal row[56..68].to_i
     end
 
-    def read_preco_maximo(row)
+    def read_max_price(row)
       converts_to_big_decimal row[69..81].to_i
     end
 
