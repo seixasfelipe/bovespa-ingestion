@@ -14,7 +14,7 @@ module HistoricoAtivos
       ativo.code = read_code row
       ativo.market_type = read_market_type row
       ativo.name = read_name row
-      ativo.especificacao = read_especificacao row
+      ativo.spec = read_spec row
       ativo.prazo_termo = read_prazo_termo row
       ativo.moeda_referencia = read_moeda_referencia row
       ativo.preco_abertura = read_preco_abertura row
@@ -53,7 +53,7 @@ module HistoricoAtivos
       row[27..38].strip
     end
 
-    def read_especificacao(row)
+    def read_spec(row)
       row[39..48].strip
     end
 

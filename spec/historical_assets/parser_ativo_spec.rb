@@ -36,8 +36,8 @@ module HistoricoAtivos
       @ativo.name.should == "VALE R DOCE|"
     end
 
-    it "deveria extrair ativo contendo especificacao" do
-      @ativo.especificacao.should == "ON       |"
+    it "deveria extrair ativo contendo spec" do
+      @ativo.spec.should == "ON       |"
     end
 
     it "deveria extrair ativo contendo prazo em dias do mercado a termo" do
