@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
     t.decimal  "last_price"
     t.decimal  "best_option_purch_price"
     t.decimal  "best_option_sell_price"
-    t.decimal  "total_negocios"
+    t.decimal  "total_transactions"
     t.decimal  "quantidade_titulos_negociados"
     t.decimal  "volume_negocios"
     t.datetime "created_at",                    :null => false
