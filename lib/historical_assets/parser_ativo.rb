@@ -26,7 +26,7 @@ module HistoricoAtivos
       ativo.best_option_sell_price = read_best_option_sell_price row
       ativo.total_transactions = read_total_transactions row
       ativo.total_share_transactions= read_total_share_transactions row
-      ativo.volume_negocios = read_volume_negocios row
+      ativo.vol_transactions = read_vol_transactions row
       ativo
     end
 
@@ -101,7 +101,7 @@ module HistoricoAtivos
       BigDecimal.new(row[152..169])
     end
     
-    def read_volume_negocios(row)
+    def read_vol_transactions(row)
       BigDecimal.new(row[170..187])
     end
     

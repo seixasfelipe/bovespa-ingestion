@@ -85,7 +85,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo volume de negocios" do
-      @ativo.volume_negocios.should == 720641400
+      @ativo.vol_transactions.should == 720641400
     end
   end
 end
