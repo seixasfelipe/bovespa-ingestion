@@ -1,4 +1,4 @@
-class CreateAtivos < ActiveRecord::Migration
+class CreateAssets < ActiveRecord::Migration
   def self.up
     create_table :ativos do |t|
       t.date :data
