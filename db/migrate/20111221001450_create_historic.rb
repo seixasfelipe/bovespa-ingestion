@@ -4,7 +4,7 @@ class CreateHistoric < ActiveRecord::Migration
       t.string :filename
       t.string :origin_code
       t.date :created_date
-      t.date :data_importacao
+      t.date :imported_date
       t.timestamps
     end
   end
