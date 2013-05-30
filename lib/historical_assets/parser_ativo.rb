@@ -23,7 +23,7 @@ module HistoricoAtivos
       ativo.medium_price = read_medium_price row
       ativo.last_price = read_last_price row
       ativo.best_option_purch_price = read_best_option_purch_price row
-      ativo.preco_melhor_oferta_venda = read_preco_melhor_oferta_venda row
+      ativo.best_option_sell_price = read_best_option_sell_price row
       ativo.total_negocios = read_total_negocios row
       ativo.quantidade_titulos_negociados= read_quantidade_titulos_negociados row
       ativo.volume_negocios = read_volume_negocios row
@@ -89,7 +89,7 @@ module HistoricoAtivos
       converts_to_big_decimal row[121..133].to_i
     end
     
-    def read_preco_melhor_oferta_venda(row)
+    def read_best_option_sell_price(row)
       converts_to_big_decimal row[134..146].to_i
     end
     

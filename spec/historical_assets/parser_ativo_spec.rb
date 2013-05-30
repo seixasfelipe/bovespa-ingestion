@@ -73,7 +73,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo preco da melhor oferta de venda" do
-      @ativo.preco_melhor_oferta_venda.should == 104.38
+      @ativo.best_option_sell_price.should == 104.38
     end
 
     it "deveria extrair ativo contendo total de negocios" do
