@@ -12,7 +12,7 @@ module HistoricoAtivos
       ativo.date = read_data row
       ativo.bdi_code = read_bdi_code row
       ativo.codigo = read_codigo row
-      ativo.tipo_mercado = read_tipo_mercado row
+      ativo.market_type = read_market_type row
       ativo.nome = read_nome row
       ativo.especificacao = read_especificacao row
       ativo.prazo_termo = read_prazo_termo row
@@ -45,7 +45,7 @@ module HistoricoAtivos
       row[12..23].strip
     end
 
-    def read_tipo_mercado(row)
+    def read_market_type(row)
       row[24..26].to_i
     end
 

@@ -29,7 +29,7 @@ module HistoricoAtivos
     end
     
     it "deveria extrair ativo contendo tipo de mercado" do
-      @ativo.tipo_mercado.should == 10
+      @ativo.market_type.should == 10
     end
 
     it "deveria extrair ativo contendo nome" do

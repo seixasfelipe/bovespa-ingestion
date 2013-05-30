@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
     t.date     "data"
     t.string   "bdi_code"
     t.string   "codigo"
-    t.string   "tipo_mercado"
+    t.string   "market_type"
     t.string   "nome"
     t.string   "especificacao"
     t.string   "moeda_referencia"
