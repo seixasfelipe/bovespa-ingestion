@@ -25,7 +25,7 @@ module HistoricoAtivos
       ativo.best_option_purch_price = read_best_option_purch_price row
       ativo.best_option_sell_price = read_best_option_sell_price row
       ativo.total_transactions = read_total_transactions row
-      ativo.quantidade_titulos_negociados= read_quantidade_titulos_negociados row
+      ativo.total_share_transactions= read_total_share_transactions row
       ativo.volume_negocios = read_volume_negocios row
       ativo
     end
@@ -97,7 +97,7 @@ module HistoricoAtivos
       row[147..151].to_i
     end
     
-    def read_quantidade_titulos_negociados(row)
+    def read_total_share_transactions(row)
       BigDecimal.new(row[152..169])
     end
     

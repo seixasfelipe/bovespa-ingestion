@@ -81,7 +81,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo quantidade de titulos negociados" do
-      @ativo.quantidade_titulos_negociados.should == 69500
+      @ativo.total_share_transactions.should == 69500
     end
 
     it "deveria extrair ativo contendo volume de negocios" do
