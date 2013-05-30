@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
   create_table "historical_assets", :force => true do |t|
     t.string   "filename"
     t.string   "origin_code"
-    t.date     "data_geracao"
+    t.date     "created_date"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "quantidade_ativos"

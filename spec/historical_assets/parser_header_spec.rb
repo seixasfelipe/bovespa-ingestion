@@ -25,7 +25,7 @@ module HistoricoAtivos
     end
     
     it "deveria extrair header contendo a data de geracao do arquivo" do
-      @header.data_geracao.to_s.should eql Date.new(2004, 05, 31).to_s 
+      @header.created_date.to_s.should eql Date.new(2004, 05, 31).to_s 
     end
   end
 end

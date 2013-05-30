@@ -10,7 +10,7 @@ module HistoricoAtivos
       header = Header.new
       header.filename = read_filename row
       header.origin_code = read_origin_code row
-      header.data_geracao = read_data_geracao row
+      header.created_date = read_created_date row
       header
     end
 
@@ -22,7 +22,7 @@ module HistoricoAtivos
       row[15..22].strip
     end
 
-    def read_data_geracao(row)
+    def read_created_date(row)
       year = row[23..26]
       month = row[27..28]
       day = row[29..30]

@@ -7,7 +7,7 @@ module HistoricoAtivos
       header = Header.new
       header.filename = "COTA.HIST2003"
       header.origin_code = "BOVESPA"
-      header.data_geracao = Date.new(2004, 05, 31)
+      header.created_date = Date.new(2004, 05, 31)
       header
     }
 
@@ -24,7 +24,7 @@ module HistoricoAtivos
 
       historico.filename.should == "COTA.HIST2003"
       historico.origin_code.should == "BOVESPA"
-      historico.data_geracao.to_s.should eql Date.new(2004, 05, 31).to_s
+      historico.created_date.to_s.should eql Date.new(2004, 05, 31).to_s
     end
 
     it "deveria carregar dados contidos no trailer" do

@@ -3,7 +3,7 @@ class CreateHistoric < ActiveRecord::Migration
     create_table :historical_assets do |t|
       t.string :filename
       t.string :origin_code
-      t.date :data_geracao
+      t.date :created_date
       t.date :data_importacao
       t.timestamps
     end

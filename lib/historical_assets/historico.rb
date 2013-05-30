@@ -6,7 +6,7 @@ module HistoricoAtivos
 
     def import_header(header)
       self.filename = header.filename
-      self.data_geracao = header.data_geracao
+      self.created_date = header.created_date
       self.origin_code = header.origin_code
     end
 
