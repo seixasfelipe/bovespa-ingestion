@@ -8,7 +8,7 @@ class CreateAssets < ActiveRecord::Migration
       t.string :name
       t.string :spec
       t.string :currency_ref
-      t.decimal :price_opening
+      t.decimal :preco_abertura
       t.decimal :preco_maximo
       t.decimal :preco_minimo
       t.decimal :preco_medio
