@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
 
   create_table "historical_assets", :force => true do |t|
     t.string   "filename"
-    t.string   "codigo_origem"
+    t.string   "origin_code"
     t.date     "data_geracao"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false

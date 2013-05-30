@@ -21,7 +21,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair header contendo codigo origem" do
-      @header.codigo_origem.should == "BOVESPA"
+      @header.origin_code.should == "BOVESPA"
     end
     
     it "deveria extrair header contendo a data de geracao do arquivo" do

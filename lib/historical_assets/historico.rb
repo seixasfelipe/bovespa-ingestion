@@ -7,7 +7,7 @@ module HistoricoAtivos
     def import_header(header)
       self.filename = header.filename
       self.data_geracao = header.data_geracao
-      self.codigo_origem = header.codigo_origem
+      self.origin_code = header.origin_code
     end
 
     def import_trailer(trailer)

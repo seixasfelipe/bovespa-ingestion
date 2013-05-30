@@ -6,7 +6,7 @@ module HistoricoAtivos
     let(:header) {
       header = Header.new
       header.filename = "COTA.HIST2003"
-      header.codigo_origem = "BOVESPA"
+      header.origin_code = "BOVESPA"
       header.data_geracao = Date.new(2004, 05, 31)
       header
     }
@@ -23,7 +23,7 @@ module HistoricoAtivos
       historico.import_header header
 
       historico.filename.should == "COTA.HIST2003"
-      historico.codigo_origem.should == "BOVESPA"
+      historico.origin_code.should == "BOVESPA"
       historico.data_geracao.to_s.should eql Date.new(2004, 05, 31).to_s
     end
 

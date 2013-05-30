@@ -9,7 +9,7 @@ module HistoricoAtivos
     def read_header(row)
       header = Header.new
       header.filename = read_filename row
-      header.codigo_origem = read_codigo_origem row
+      header.origin_code = read_origin_code row
       header.data_geracao = read_data_geracao row
       header
     end
@@ -18,7 +18,7 @@ module HistoricoAtivos
       row[02..14].strip
     end
 
-    def read_codigo_origem(row)
+    def read_origin_code(row)
       row[15..22].strip
     end
 
