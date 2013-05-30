@@ -52,11 +52,11 @@ module HistoricoAtivos
     end
 
     it "deveria importar o header ao carregar o arquivo" do
-      header.stub(:nome_arquivo).and_return("COTAHIST.2003")
+      header.stub(:filename).and_return("COTAHIST.2003")
       parser_header.stub(:parse).and_return(header)
 
       historico = loader.load @file
-      historico.nome_arquivo.should == "COTAHIST.2003"
+      historico.filename.should == "COTAHIST.2003"
     end
 
     it "deveria importar o trailer ao carregar o arquivo" do

@@ -1,7 +1,7 @@
 class CreateHistoric < ActiveRecord::Migration
   def self.up
     create_table :historical_assets do |t|
-      t.string :nome_arquivo
+      t.string :filename
       t.string :codigo_origem
       t.date :data_geracao
       t.date :data_importacao

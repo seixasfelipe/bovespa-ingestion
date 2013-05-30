@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
   add_index "ativos", ["historico_id"], :name => "index_ativos_on_historico_id"
 
   create_table "historical_assets", :force => true do |t|
-    t.string   "nome_arquivo"
+    t.string   "filename"
     t.string   "codigo_origem"
     t.date     "data_geracao"
     t.datetime "created_at",        :null => false

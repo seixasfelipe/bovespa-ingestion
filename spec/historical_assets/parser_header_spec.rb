@@ -17,7 +17,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair header contendo o nome do arquivo lido" do
-      @header.nome_arquivo.should == "COTAHIST.2003"
+      @header.filename.should == "COTAHIST.2003"
     end
 
     it "deveria extrair header contendo codigo origem" do

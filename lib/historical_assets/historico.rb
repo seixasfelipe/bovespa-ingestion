@@ -5,7 +5,7 @@ module HistoricoAtivos
     has_many :ativos
 
     def import_header(header)
-      self.nome_arquivo = header.nome_arquivo
+      self.filename = header.filename
       self.data_geracao = header.data_geracao
       self.codigo_origem = header.codigo_origem
     end
