@@ -61,7 +61,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo preco medio" do
-      @ativo.preco_medio.should == 103.68
+      @ativo.medium_price.should == 103.68
     end
 
     it "deveria extrair ativo contendo preco ultimo" do

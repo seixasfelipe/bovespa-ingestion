@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
     t.decimal  "opening_price"
     t.decimal  "max_price"
     t.decimal  "min_price"
-    t.decimal  "preco_medio"
+    t.decimal  "medium_price"
     t.decimal  "preco_ultimo"
     t.decimal  "preco_melhor_oferta_compra"
     t.decimal  "preco_melhor_oferta_venda"
