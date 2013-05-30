@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
     t.date     "created_date"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-    t.integer  "quantidade_ativos"
+    t.integer  "asset_qty"
   end
 
 end

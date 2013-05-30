@@ -11,7 +11,7 @@ module HistoricoAtivos
     end
 
     def import_trailer(trailer)
-      self.quantidade_ativos = trailer.quantidade_ativos
+      self.asset_qty = trailer.asset_qty
     end
   end
 end

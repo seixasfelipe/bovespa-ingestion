@@ -60,11 +60,11 @@ module HistoricoAtivos
     end
 
     it "deveria importar o trailer ao carregar o arquivo" do
-      trailer.stub(:quantidade_ativos).and_return(553)
+      trailer.stub(:asset_qty).and_return(553)
       parser_trailer.stub(:parse).and_return(trailer)
 
       historico = loader.load @file
-      historico.quantidade_ativos.should == 553
+      historico.asset_qty.should == 553
     end
 
     it "deveria persistir o historico" do

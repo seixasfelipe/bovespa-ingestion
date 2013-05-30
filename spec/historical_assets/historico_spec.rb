@@ -13,7 +13,7 @@ module HistoricoAtivos
 
     let(:trailer) {
       trailer = Trailer.new
-      trailer.quantidade_ativos = 553
+      trailer.asset_qty = 553
       trailer
     }
 
@@ -30,7 +30,7 @@ module HistoricoAtivos
     it "deveria carregar dados contidos no trailer" do
       historico.import_trailer trailer
 
-      historico.quantidade_ativos == 553
+      historico.asset_qty == 553
     end
 
     it "deveria ser activerecord" do
