@@ -49,7 +49,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo preco de abertura" do
-      @ativo.preco_abertura.should == 105.01
+      @ativo.opening_price.should == 105.01
     end
 
     it "deveria extrair ativo contendo preco maximo" do
