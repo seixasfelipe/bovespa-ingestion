@@ -1,7 +1,7 @@
 class CreateAssets < ActiveRecord::Migration
   def self.up
     create_table :ativos do |t|
-      t.date :data
+      t.date :date
       t.string :codigo_bdi
       t.string :codigo
       t.string :tipo_mercado

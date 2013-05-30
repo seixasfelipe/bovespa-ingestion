@@ -9,7 +9,7 @@ module HistoricoAtivos
     
     def read_ativo(row)
       ativo = Ativo.new
-      ativo.data = read_data row
+      ativo.date = read_data row
       ativo.codigo_bdi = read_codigo_bdi row
       ativo.codigo = read_codigo row
       ativo.tipo_mercado = read_tipo_mercado row

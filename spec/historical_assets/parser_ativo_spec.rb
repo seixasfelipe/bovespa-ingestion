@@ -17,7 +17,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo data" do
-      @ativo.data.to_s.should eql Date.new(2003, 2, 12).to_s
+      @ativo.date.to_s.should eql Date.new(2003, 2, 12).to_s
     end
 
     it "deveria extrair ativo contendo codigo BDI" do
