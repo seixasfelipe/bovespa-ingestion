@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
 
   create_table "ativos", :force => true do |t|
     t.date     "data"
-    t.string   "codigo_bdi"
+    t.string   "bdi_code"
     t.string   "codigo"
     t.string   "tipo_mercado"
     t.string   "nome"

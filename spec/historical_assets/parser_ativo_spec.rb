@@ -21,7 +21,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo codigo BDI" do
-      @ativo.codigo_bdi.should == 02
+      @ativo.bdi_code.should == 02
     end
     
     it "deveria extrair ativo contendo codigo" do
