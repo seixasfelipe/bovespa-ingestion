@@ -1,6 +1,6 @@
 class CreateAssets < ActiveRecord::Migration
   def self.up
-    create_table :ativos do |t|
+    create_table :assets do |t|
       t.date :date
       t.string :bdi_code
       t.string :code
@@ -23,6 +23,6 @@ class CreateAssets < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :ativos
+    drop_table :assets
   end
 end

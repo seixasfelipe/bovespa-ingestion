@@ -2,7 +2,7 @@ module HistoricoAtivos
   class Historico < ActiveRecord::Base
     self.table_name = "historical_assets"
 
-    has_many :ativos
+    has_many :assets
 
     def import_header(header)
       self.filename = header.filename

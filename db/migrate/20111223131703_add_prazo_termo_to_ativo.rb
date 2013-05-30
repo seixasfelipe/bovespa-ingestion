@@ -1,9 +1,9 @@
 class AddPrazoTermoToAtivo < ActiveRecord::Migration
   def self.up
-    add_column :ativos, :prazo_termo, :integer
+    add_column :assets, :prazo_termo, :integer
   end
 
   def self.down
-    remove_column :ativos, :prazo_termo
+    remove_column :assets, :prazo_termo
   end
 end
