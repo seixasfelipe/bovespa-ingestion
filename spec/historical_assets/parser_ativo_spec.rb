@@ -32,8 +32,8 @@ module HistoricoAtivos
       @ativo.market_type.should == 10
     end
 
-    it "deveria extrair ativo contendo nome" do
-      @ativo.nome.should == "VALE R DOCE|"
+    it "deveria extrair ativo contendo name" do
+      @ativo.name.should == "VALE R DOCE|"
     end
 
     it "deveria extrair ativo contendo especificacao" do

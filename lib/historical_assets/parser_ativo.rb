@@ -13,7 +13,7 @@ module HistoricoAtivos
       ativo.bdi_code = read_bdi_code row
       ativo.code = read_code row
       ativo.market_type = read_market_type row
-      ativo.nome = read_nome row
+      ativo.name = read_name row
       ativo.especificacao = read_especificacao row
       ativo.prazo_termo = read_prazo_termo row
       ativo.moeda_referencia = read_moeda_referencia row
@@ -49,7 +49,7 @@ module HistoricoAtivos
       row[24..26].to_i
     end
 
-    def read_nome(row)
+    def read_name(row)
       row[27..38].strip
     end
 

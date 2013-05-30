@@ -5,7 +5,7 @@ class CreateAssets < ActiveRecord::Migration
       t.string :bdi_code
       t.string :code
       t.string :market_type
-      t.string :nome
+      t.string :name
       t.string :especificacao
       t.string :moeda_referencia
       t.decimal :preco_abertura

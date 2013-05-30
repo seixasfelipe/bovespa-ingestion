@@ -16,7 +16,7 @@ module HistoricoAtivos
       header.should be_nil
     end
 
-    it "deveria extrair header contendo o nome do arquivo lido" do
+    it "deveria extrair header contendo o name do arquivo lido" do
       @header.filename.should == "COTAHIST.2003"
     end
 
