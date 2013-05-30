@@ -15,9 +15,9 @@ class CreateAssets < ActiveRecord::Migration
       t.decimal :last_price
       t.decimal :best_option_purch_price
       t.decimal :best_option_sell_price
-      t.decimal :total_transactions
-      t.decimal :total_share_transactions
-      t.decimal :vol_transactions
+      t.decimal :total_trans
+      t.decimal :total_share_trans
+      t.decimal :vol_trans
       t.timestamps
     end
   end
