@@ -16,7 +16,7 @@ module HistoricoAtivos
       ativo.name = read_name row
       ativo.spec = read_spec row
       ativo.prazo_termo = read_prazo_termo row
-      ativo.moeda_referencia = read_moeda_referencia row
+      ativo.currency_ref = read_currency_ref row
       ativo.preco_abertura = read_preco_abertura row
       ativo.preco_maximo = read_preco_maximo row
       ativo.preco_minimo = read_preco_minimo row
@@ -61,7 +61,7 @@ module HistoricoAtivos
       row[49..51].to_i
     end
 
-    def read_moeda_referencia(row)
+    def read_currency_ref(row)
       row[52..55].strip
     end
 

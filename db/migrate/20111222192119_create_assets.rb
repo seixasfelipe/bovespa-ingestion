@@ -7,7 +7,7 @@ class CreateAssets < ActiveRecord::Migration
       t.string :market_type
       t.string :name
       t.string :spec
-      t.string :moeda_referencia
+      t.string :currency_ref
       t.decimal :preco_abertura
       t.decimal :preco_maximo
       t.decimal :preco_minimo

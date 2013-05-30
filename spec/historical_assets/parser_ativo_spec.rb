@@ -45,7 +45,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo moeda de referencia" do
-      @ativo.moeda_referencia.should == "R$ |"
+      @ativo.currency_ref.should == "R$ |"
     end
 
     it "deveria extrair ativo contendo preco de abertura" do
