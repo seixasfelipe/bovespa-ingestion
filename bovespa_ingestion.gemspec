@@ -1,10 +1,10 @@
 lib = File.expand_path("../lib", __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'historico_ativos/version'
+require 'historical_assets/version'
 
 # -*- encoding: utf-8 -*-
-Gem::Specification.new 'bovespa_ingestion', HistoricoAtivos::VERSION do |s|
+Gem::Specification.new 'bovespa_ingestion', HistoricQuotes::VERSION do |s|
   s.summary           = "An importer of historical stock quotations from BM&F Bovespa"
   s.description       = "It reads historical files of daily stock quotations, parses each line and inserts into database for future use."
   s.date              = "2013-05-27"

@@ -1,1 +1,1 @@
-require 'historico_ativos'
+require 'historical_quotes'

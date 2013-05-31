@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module HistoricoAtivos
+module HistoricQuotes
   describe ParserTrailer do
     before(:each) do
       sample_row = "99COTAHIST.2003BOVESPA 2004053199999999999  "
@@ -17,7 +17,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair header contendo quantidade de ativos no arquivo lido" do
-      @trailer.quantidade_ativos.should == 99999999999
+      @trailer.stock_quotes_qty.should == 99999999999
     end
   end
 end
