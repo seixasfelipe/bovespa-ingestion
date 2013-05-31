@@ -48,7 +48,7 @@ module HistoricQuotes
 
         puts "Total stock quotes loaded: #{historic.stock_quote.length}"
 
-        loader.persist historico
+        loader.persist historic
 
         end_time = Time.now 
         elapsed_time = (end_time - start_time) * 1000.0
