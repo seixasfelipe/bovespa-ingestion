@@ -23,7 +23,7 @@ Running
 
 Run application with real BM&F Bovespa historical file, just pass it as argument (for instance):
 
-  `$ ./bin/load_hist sample/DemoHistoricalStockExchange12022003.txt`
+  `$ ./bin/bovespa-parser sample/DemoHistoricalStockExchange12022003.txt`
 	
 Testing
 -------

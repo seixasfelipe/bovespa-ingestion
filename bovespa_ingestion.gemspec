@@ -11,7 +11,7 @@ Gem::Specification.new 'bovespa_ingestion', HistoricQuotes::VERSION do |s|
   s.authors           = ["Felipe Seixas", "Rodrigo Fraga"]
   s.email             = "seixasfelipe@gmail.com"
   s.homepage          = "http://github.com/seixasfelipe/bovespa_ingestion"
-  s.executables       = ["load_hist"]
+  s.executables       = ["bovespa-parser"]
   s.files             = `git ls-files`.split("\n") - %w[.gitignore .travis.yml]
   s.test_files        = s.files.select { |p| p =~ /^test\/.*_test.rb/ }
   s.extra_rdoc_files  = s.files.select { |p| p =~ /^README/ } << 'LICENSE'
