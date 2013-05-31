@@ -46,7 +46,7 @@ module HistoricoAtivos
         loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
         historico = loader.load sample_file 
 
-        puts "Total assets loaded: #{historic.asset.length}"
+        puts "Total assets loaded: #{historico.ativos.length}"
 
         loader.persist historico
 

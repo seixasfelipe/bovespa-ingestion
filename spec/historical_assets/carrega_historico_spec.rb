@@ -47,8 +47,8 @@ module HistoricoAtivos
       historico = loader.load @file
       
       historico.ativos.size.should == 2
-      historico.ativos[0].code.should == "VALE3"
-      historico.ativos[1].code.should == "VALE5T"
+      historico.ativos[0].ticker_symbol.should == "VALE3"
+      historico.ativos[1].ticker_symbol.should == "VALE5T"
     end
 
     it "deveria importar o header ao carregar o arquivo" do
@@ -60,11 +60,11 @@ module HistoricoAtivos
     end
 
     it "deveria importar o trailer ao carregar o arquivo" do
-      trailer.stub(:asset_qty).and_return(553)
+      trailer.stub(:stock_quotes_qty).and_return(553)
       parser_trailer.stub(:parse).and_return(trailer)
 
       historico = loader.load @file
-      historico.asset_qty.should == 553
+      historico.stock_quotes_qty.should == 553
     end
 
     it "deveria persistir o historico" do

@@ -1,5 +1,5 @@
 module HistoricoAtivos
   class Trailer
-    attr_accessor :asset_qty
+    attr_accessor :stock_quotes_qty
   end
 end

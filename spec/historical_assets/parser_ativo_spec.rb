@@ -25,7 +25,7 @@ module HistoricoAtivos
     end
     
     it "deveria extrair ativo contendo code" do
-      @ativo.code.should == "VALE3      |"
+      @ativo.ticker_symbol.should == "VALE3      |"
     end
     
     it "deveria extrair ativo contendo tipo de mercado" do
@@ -37,7 +37,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo spec" do
-      @ativo.spec.should == "ON       |"
+      @ativo.specification.should == "ON       |"
     end
 
     it "deveria extrair ativo contendo prazo em dias do mercado a termo" do
@@ -53,39 +53,39 @@ module HistoricoAtivos
     end
 
     it "deveria extrair ativo contendo preco maximo" do
-      @ativo.max_price.should == 105.01
+      @ativo.highest_price.should == 105.01
     end
 
     it "deveria extrair ativo contendo preco minimo" do
-      @ativo.min_price.should == 102.50
+      @ativo.lowest_price.should == 102.50
     end
 
     it "deveria extrair ativo contendo preco medio" do
-      @ativo.medium_price.should == 103.68
+      @ativo.average_price.should == 103.68
     end
 
     it "deveria extrair ativo contendo preco ultimo" do
-      @ativo.last_price.should == 103.21
+      @ativo.close_price.should == 103.21
     end
 
     it "deveria extrair ativo contendo preco da melhor oferta de compra" do
-      @ativo.best_option_purch_price.should == 103.21
+      @ativo.best_purchase_price.should == 103.21
     end
 
     it "deveria extrair ativo contendo preco da melhor oferta de venda" do
-      @ativo.best_option_sell_price.should == 104.38
+      @ativo.best_sell_price.should == 104.38
     end
 
     it "deveria extrair ativo contendo total de negocios" do
-      @ativo.total_trans.should == 142
+      @ativo.total_trading.should == 142
     end
 
     it "deveria extrair ativo contendo quantidade de titulos negociados" do
-      @ativo.total_share_trans.should == 69500
+      @ativo.total_trading_share.should == 69500
     end
 
     it "deveria extrair ativo contendo volume de negocios" do
-      @ativo.vol_trans.should == 720641400
+      @ativo.trading_volume.should == 720641400
     end
   end
 end

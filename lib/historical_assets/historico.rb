@@ -1,8 +1,8 @@
 module HistoricoAtivos
   class Historico < ActiveRecord::Base
-    self.table_name = "historical_assets"
+    self.table_name = "historical_stock_quotes"
 
-    has_many :assets
+    has_many :ativos
 
     def import_header(header)
       self.filename = header.filename
@@ -11,7 +11,7 @@ module HistoricoAtivos
     end
 
     def import_trailer(trailer)
-      self.asset_qty = trailer.asset_qty
+      self.stock_quotes_qty = trailer.stock_quotes_qty
     end
   end
 end

@@ -11,22 +11,22 @@ module HistoricoAtivos
       ativo = Ativo.new
       ativo.date = read_data row
       ativo.bdi_code = read_bdi_code row
-      ativo.code = read_code row
+      ativo.ticker_symbol = read_ticker_symbol row
       ativo.market_type = read_market_type row
       ativo.name = read_name row
-      ativo.spec = read_spec row
+      ativo.specification = read_specification row
       ativo.prazo_termo = read_prazo_termo row
       ativo.currency_ref = read_currency_ref row
       ativo.opening_price = read_opening_price row
-      ativo.max_price = read_max_price row
-      ativo.min_price = read_min_price row
-      ativo.medium_price = read_medium_price row
-      ativo.last_price = read_last_price row
-      ativo.best_option_purch_price = read_best_option_purch_price row
-      ativo.best_option_sell_price = read_best_option_sell_price row
-      ativo.total_trans = read_total_trans row
-      ativo.total_share_trans= read_total_share_trans row
-      ativo.vol_trans = read_vol_trans row
+      ativo.highest_price = read_highest_price row
+      ativo.lowest_price = read_lowest_price row
+      ativo.average_price = read_average_price row
+      ativo.close_price = read_close_price row
+      ativo.best_purchase_price = read_best_purchase_price row
+      ativo.best_sell_price = read_best_sell_price row
+      ativo.total_trading = read_total_trading row
+      ativo.total_trading_share= read_total_trading_share row
+      ativo.trading_volume = read_trading_volume row
       ativo
     end
 
@@ -41,7 +41,7 @@ module HistoricoAtivos
       row[10..11].to_i
     end
 
-    def read_code(row)
+    def read_ticker_symbol(row)
       row[12..23].strip
     end
 
@@ -53,7 +53,7 @@ module HistoricoAtivos
       row[27..38].strip
     end
 
-    def read_spec(row)
+    def read_specification(row)
       row[39..48].strip
     end
 
@@ -69,39 +69,39 @@ module HistoricoAtivos
       converts_to_big_decimal row[56..68].to_i
     end
 
-    def read_max_price(row)
+    def read_highest_price(row)
       converts_to_big_decimal row[69..81].to_i
     end
 
-    def read_min_price(row)
+    def read_lowest_price(row)
       converts_to_big_decimal row[82..94].to_i
     end
 
-    def read_medium_price(row)
+    def read_average_price(row)
       converts_to_big_decimal row[95..107].to_i
     end
     
-    def read_last_price(row)
+    def read_close_price(row)
       converts_to_big_decimal row[108..120].to_i
     end
     
-    def read_best_option_purch_price(row)
+    def read_best_purchase_price(row)
       converts_to_big_decimal row[121..133].to_i
     end
     
-    def read_best_option_sell_price(row)
+    def read_best_sell_price(row)
       converts_to_big_decimal row[134..146].to_i
     end
     
-    def read_total_trans(row)
+    def read_total_trading(row)
       row[147..151].to_i
     end
     
-    def read_total_share_trans(row)
+    def read_total_trading_share(row)
       BigDecimal.new(row[152..169])
     end
     
-    def read_vol_trans(row)
+    def read_trading_volume(row)
       BigDecimal.new(row[170..187])
     end
     

@@ -17,7 +17,7 @@ module HistoricoAtivos
     end
 
     it "deveria extrair header contendo quantidade de ativos no arquivo lido" do
-      @trailer.asset_qty.should == 99999999999
+      @trailer.stock_quotes_qty.should == 99999999999
     end
   end
 end
