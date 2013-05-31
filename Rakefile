@@ -11,19 +11,22 @@ end
 require 'standalone_migrations'
 StandaloneMigrations::Tasks.load_tasks
 
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new :rspec do |t|
-  t.pattern = 'spec/historico_ativos/*_spec.rb'
-  t.rspec_opts = ['--tty', '--color', '--format documentation']
+namespace :test do
+  ENV["RAILS_ENV"] = "test"
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new :rspec do |t|
+    t.pattern = 'spec/historical_quotes/*_spec.rb'
+    t.rspec_opts = ['--tty', '--color', '--format documentation']
+  end
 end
 
-task default: :rspec
+task default: "test:rspec"
 
 task :build do
   system "gem build bovespa_ingestion.gemspec"
 end
 
-require 'historico_ativos/version' 
+require 'historical_quotes/version' 
 task :release => :build do
   system "gem push bundler-#{HistoricoAtivos::VERSION}.gem"
 end

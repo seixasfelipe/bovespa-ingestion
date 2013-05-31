@@ -11,41 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223214919) do
+ActiveRecord::Schema.define(:version => 20130531005232) do
 
-  create_table "ativos", :force => true do |t|
-    t.date     "data"
-    t.string   "codigo_bdi"
-    t.string   "codigo"
-    t.string   "tipo_mercado"
-    t.string   "nome"
-    t.string   "especificacao"
-    t.string   "moeda_referencia"
-    t.decimal  "preco_abertura"
-    t.decimal  "preco_maximo"
-    t.decimal  "preco_minimo"
-    t.decimal  "preco_medio"
-    t.decimal  "preco_ultimo"
-    t.decimal  "preco_melhor_oferta_compra"
-    t.decimal  "preco_melhor_oferta_venda"
-    t.decimal  "total_negocios"
-    t.decimal  "quantidade_titulos_negociados"
-    t.decimal  "volume_negocios"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.integer  "historico_id"
+  create_table "historical_stock_quotes", :force => true do |t|
+    t.string   "filename"
+    t.string   "origin_code"
+    t.date     "created_date"
+    t.integer  "stock_quotes_qty"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "stock_quotes", :force => true do |t|
+    t.date     "date"
+    t.string   "bdi_code"
+    t.string   "ticker_symbol"
+    t.string   "market_type"
+    t.string   "name"
+    t.string   "specification"
+    t.string   "currency_ref"
+    t.decimal  "opening_price"
+    t.decimal  "highest_price"
+    t.decimal  "lowest_price"
+    t.decimal  "average_price"
+    t.decimal  "close_price"
+    t.decimal  "best_purchase_price"
+    t.decimal  "best_sell_price"
+    t.decimal  "total_trading"
+    t.decimal  "total_trading_share"
+    t.decimal  "trading_volume"
     t.integer  "prazo_termo"
+    t.integer  "historical_stock_quote_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
-  add_index "ativos", ["historico_id"], :name => "index_ativos_on_historico_id"
-
-  create_table "historico_ativos", :force => true do |t|
-    t.string   "nome_arquivo"
-    t.string   "codigo_origem"
-    t.date     "data_geracao"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.integer  "quantidade_ativos"
-  end
+  add_index "stock_quotes", ["historical_stock_quote_id"], :name => "index_stock_quotes_on_historical_stock_quote_id"
 
 end
