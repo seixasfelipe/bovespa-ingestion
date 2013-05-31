@@ -19,11 +19,11 @@ class CreateStockQuotes < ActiveRecord::Migration
       t.decimal :total_trading_share
       t.decimal :trading_volume
       t.integer :prazo_termo
-      t.integer :historical_stock_quotes_id
+      t.integer :historical_stock_quote_id
       t.timestamps
     end
 
-    add_index :stock_quotes, :historical_stock_quotes_id
+    add_index :stock_quotes, :historical_stock_quote_id
   end
 
   def self.down

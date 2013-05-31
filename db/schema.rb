@@ -41,11 +41,11 @@ ActiveRecord::Schema.define(:version => 20130531005232) do
     t.decimal  "total_trading_share"
     t.decimal  "trading_volume"
     t.integer  "prazo_termo"
-    t.integer  "historical_stock_quotes_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.integer  "historical_stock_quote_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
-  add_index "stock_quotes", ["historical_stock_quotes_id"], :name => "index_stock_quotes_on_historical_stock_quotes_id"
+  add_index "stock_quotes", ["historical_stock_quote_id"], :name => "index_stock_quotes_on_historical_stock_quote_id"
 
 end

@@ -1,1 +1,1 @@
-require 'historical_assets'
+require 'historical_quotes'
