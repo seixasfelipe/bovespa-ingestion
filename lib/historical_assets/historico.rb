@@ -1,5 +1,5 @@
 module HistoricoAtivos
-  class Historico < ActiveRecord::Base
+  class HistoricalStockQuote < ActiveRecord::Base
     self.table_name = "historical_stock_quotes"
 
     has_many :stock_quotes

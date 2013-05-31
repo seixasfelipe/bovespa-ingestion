@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module HistoricoAtivos
-  describe Historico do
+  describe HistoricalStockQuote do
 
     let(:header) {
       header = Header.new
@@ -17,7 +17,7 @@ module HistoricoAtivos
       trailer
     }
 
-    let(:historico) { Historico.new }
+    let(:historico) { HistoricalStockQuote.new }
 
     it "deveria carregar dados contidos no header" do
       historico.import_header header

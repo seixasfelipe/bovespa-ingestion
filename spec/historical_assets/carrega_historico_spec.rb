@@ -68,7 +68,7 @@ module HistoricoAtivos
     end
 
     it "deveria persistir o historico" do
-      historico = double(Historico).as_null_object
+      historico = double(HistoricalStockQuote).as_null_object
       historico.should_receive(:save).once
 
       loader.persist historico

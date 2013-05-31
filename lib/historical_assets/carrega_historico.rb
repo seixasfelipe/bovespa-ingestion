@@ -14,19 +14,19 @@ module HistoricoAtivos
       
       file = File.open(filepath, "r")
 
-      historico = Historico.new
+      historical_quotes = HistoricalStockQuote.new
 
       file.each { |line|
-        historico.import_header @parser_header.parse(line) if line.start_with?("00")
-        historico.stock_quotes << @parser_stock_quote.parse(line) if line.start_with?("01")
-        historico.import_trailer @parser_trailer.parse(line) if line.start_with?("99")
+        historical_quotes.import_header @parser_header.parse(line) if line.start_with?("00")
+        historical_quotes.stock_quotes << @parser_stock_quote.parse(line) if line.start_with?("01")
+        historical_quotes.import_trailer @parser_trailer.parse(line) if line.start_with?("99")
       }
 
-      historico
+      historical_quotes
     end
 
-    def persist(historico)
-      historico.save
+    def persist(historical_quotes)
+      historical_quotes.save
     end
   end
 end
