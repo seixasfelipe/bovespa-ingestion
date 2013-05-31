@@ -1,4 +1,4 @@
-module HistoricoAtivos
+module HistoricQuotes
   class ParserTrailer
     def parse(row)
       read_trailer row if row.start_with?("99")

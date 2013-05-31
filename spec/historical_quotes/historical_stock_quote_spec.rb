@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module HistoricoAtivos
+module HistoricQuotes
   describe HistoricalStockQuote do
 
     let(:header) {

@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'historical_quotes'
+require 'historical_assets'
 
-module HistoricoAtivos
+module HistoricQuotes
 
   if ARGV.size <= 0
 
@@ -34,21 +34,21 @@ module HistoricoAtivos
     elsif command == 'import'
 
       if ARGV.size == 1
-        puts "Please specify the file."
+        puts "Please specify the file"
       else
 
         sample_file = ARGV[1]
 
-        puts "Loading historical data file: #{sample_file}"
+        puts "Loading file historical data: #{sample_file}"
 
         start_time = Time.now
 
-        loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserStockQuote.new
-        historical_quotes = loader.load sample_file 
+        loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
+        historico = loader.load sample_file 
 
-        puts "Total stock quotes loaded: #{historical_quotes.stock_quotes.length}."
+        puts "Total assets loaded: #{historic.asset.length}"
 
-        loader.persist historical_quotes
+        loader.persist historico
 
         end_time = Time.now 
         elapsed_time = (end_time - start_time) * 1000.0

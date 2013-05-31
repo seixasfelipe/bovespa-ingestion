@@ -1,4 +1,4 @@
-module HistoricoAtivos
+module HistoricQuotes
   class HistoricalStockQuote < ActiveRecord::Base
     self.table_name = "historical_stock_quotes"
 

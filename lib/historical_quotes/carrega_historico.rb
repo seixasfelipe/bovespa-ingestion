@@ -1,4 +1,4 @@
-module HistoricoAtivos
+module HistoricQuotes
   class CarregaHistorico
 
     attr_accessor :parser_header, :parser_trailer, :parser_stock_quote

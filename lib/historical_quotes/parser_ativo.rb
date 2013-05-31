@@ -1,7 +1,7 @@
 require 'date'
 require 'bigdecimal'
 
-module HistoricoAtivos
+module HistoricQuotes
   class ParserStockQuote
     def parse(row)
       read_stock_quote(row) if row.start_with?("01")

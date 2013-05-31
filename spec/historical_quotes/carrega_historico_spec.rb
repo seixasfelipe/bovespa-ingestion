@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module HistoricoAtivos
+module HistoricQuotes
   describe CarregaHistorico do
 
     before(:each) do
