@@ -1,3 +1,3 @@
-module HistoricoAtivos
+module HistoricQuotes
   VERSION = '0.4.0'
 end
