@@ -1,7 +1,7 @@
 lib = File.expand_path("../lib", __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'historico_ativos/version'
+require 'historical_assets/version'
 
 # -*- encoding: utf-8 -*-
 Gem::Specification.new 'bovespa_ingestion', HistoricoAtivos::VERSION do |s|

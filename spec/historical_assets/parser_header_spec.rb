@@ -16,16 +16,16 @@ module HistoricoAtivos
       header.should be_nil
     end
 
-    it "deveria extrair header contendo o nome do arquivo lido" do
-      @header.nome_arquivo.should == "COTAHIST.2003"
+    it "deveria extrair header contendo o name do arquivo lido" do
+      @header.filename.should == "COTAHIST.2003"
     end
 
-    it "deveria extrair header contendo codigo origem" do
-      @header.codigo_origem.should == "BOVESPA"
+    it "deveria extrair header contendo code origem" do
+      @header.origin_code.should == "BOVESPA"
     end
     
     it "deveria extrair header contendo a data de geracao do arquivo" do
-      @header.data_geracao.to_s.should eql Date.new(2004, 05, 31).to_s 
+      @header.created_date.to_s.should eql Date.new(2004, 05, 31).to_s 
     end
   end
 end

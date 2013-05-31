@@ -1,9 +1,9 @@
 class RemoveDataImportacao < ActiveRecord::Migration
   def self.up
-    remove_column :historico_ativos, :data_importacao
+    remove_column :historical_assets, :imported_date
   end
 
   def self.down
-    add_column :historico_ativos, :data_importacao, :date
+    add_column :historical_assets, :imported_date, :date
   end
 end

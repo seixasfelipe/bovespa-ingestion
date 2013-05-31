@@ -47,24 +47,24 @@ module HistoricoAtivos
       historico = loader.load @file
       
       historico.ativos.size.should == 2
-      historico.ativos[0].codigo.should == "VALE3"
-      historico.ativos[1].codigo.should == "VALE5T"
+      historico.ativos[0].code.should == "VALE3"
+      historico.ativos[1].code.should == "VALE5T"
     end
 
     it "deveria importar o header ao carregar o arquivo" do
-      header.stub(:nome_arquivo).and_return("COTAHIST.2003")
+      header.stub(:filename).and_return("COTAHIST.2003")
       parser_header.stub(:parse).and_return(header)
 
       historico = loader.load @file
-      historico.nome_arquivo.should == "COTAHIST.2003"
+      historico.filename.should == "COTAHIST.2003"
     end
 
     it "deveria importar o trailer ao carregar o arquivo" do
-      trailer.stub(:quantidade_ativos).and_return(553)
+      trailer.stub(:asset_qty).and_return(553)
       parser_trailer.stub(:parse).and_return(trailer)
 
       historico = loader.load @file
-      historico.quantidade_ativos.should == 553
+      historico.asset_qty.should == 553
     end
 
     it "deveria persistir o historico" do

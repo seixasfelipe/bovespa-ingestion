@@ -13,7 +13,7 @@ StandaloneMigrations::Tasks.load_tasks
 
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new :rspec do |t|
-  t.pattern = 'spec/historico_ativos/*_spec.rb'
+  t.pattern = 'spec/historical_assets/*_spec.rb'
   t.rspec_opts = ['--tty', '--color', '--format documentation']
 end
 

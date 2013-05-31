@@ -15,22 +15,22 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
 
   create_table "ativos", :force => true do |t|
     t.date     "data"
-    t.string   "codigo_bdi"
-    t.string   "codigo"
-    t.string   "tipo_mercado"
-    t.string   "nome"
-    t.string   "especificacao"
-    t.string   "moeda_referencia"
-    t.decimal  "preco_abertura"
-    t.decimal  "preco_maximo"
-    t.decimal  "preco_minimo"
-    t.decimal  "preco_medio"
-    t.decimal  "preco_ultimo"
-    t.decimal  "preco_melhor_oferta_compra"
-    t.decimal  "preco_melhor_oferta_venda"
-    t.decimal  "total_negocios"
-    t.decimal  "quantidade_titulos_negociados"
-    t.decimal  "volume_negocios"
+    t.string   "bdi_code"
+    t.string   "code"
+    t.string   "market_type"
+    t.string   "name"
+    t.string   "spec"
+    t.string   "currency_ref"
+    t.decimal  "opening_price"
+    t.decimal  "max_price"
+    t.decimal  "min_price"
+    t.decimal  "medium_price"
+    t.decimal  "last_price"
+    t.decimal  "best_option_purch_price"
+    t.decimal  "best_option_sell_price"
+    t.decimal  "total_trans"
+    t.decimal  "total_share_trans"
+    t.decimal  "vol_trans"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.integer  "historico_id"
@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(:version => 20111223214919) do
 
   add_index "ativos", ["historico_id"], :name => "index_ativos_on_historico_id"
 
-  create_table "historico_ativos", :force => true do |t|
-    t.string   "nome_arquivo"
-    t.string   "codigo_origem"
-    t.date     "data_geracao"
+  create_table "historical_assets", :force => true do |t|
+    t.string   "filename"
+    t.string   "origin_code"
+    t.date     "created_date"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-    t.integer  "quantidade_ativos"
+    t.integer  "asset_qty"
   end
 
 end

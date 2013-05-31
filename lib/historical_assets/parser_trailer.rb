@@ -6,11 +6,11 @@ module HistoricoAtivos
 
     def read_trailer(row)
       trailer = Trailer.new
-      trailer.quantidade_ativos = read_quantidade_ativos row
+      trailer.asset_qty = read_asset_qty row
       trailer
     end
 
-    def read_quantidade_ativos(row)
+    def read_asset_qty(row)
       total = row[31..41].to_i
     end
   end

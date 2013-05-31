@@ -1,22 +1,20 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'historico_ativos'
+require 'historical_assets'
 
 module HistoricoAtivos
 
   if ARGV.size <= 0
 
-    puts "Bovespa Ingestion eh uma lib que permite importar as cotacoes diarias dos ativos "
-    puts "da BM&F Bovespa utilizando os arquivos das cotacoes das series historicas."
+    puts "Bovespa Ingestion allows you to import historical BM&F Bovespa stock exchange rates"
+    puts "  Use: "
+    puts "      load_history command [arguments...]"
     puts ""
-    puts "  Uso: "
-    puts "      carregar_historico comando [argumentos...]"
+    puts "  Examples:"
+    puts "      load_history install"
+    puts "      load_history import sample/sample_cota_hist_2003.txt"
     puts ""
-    puts "  Exemplos:"
-    puts "      carregar_historico install"
-    puts "      carregar_historico import sample/sample_cota_hist_2003.txt"
-    puts ""
-    puts "  Mais informacoes:"
+    puts "  For more informations:"
     puts "      https://github.com/seixasfelipe/bovespa-ingestion"
 
   else
@@ -36,26 +34,26 @@ module HistoricoAtivos
     elsif command == 'import'
 
       if ARGV.size == 1
-        puts "Eh necessario informar o nome do arquivo a ser importado"
+        puts "Please specify the file"
       else
 
         sample_file = ARGV[1]
 
-        puts "Carregando historico do arquivo: #{sample_file}"
+        puts "Loading file historical data: #{sample_file}"
 
         start_time = Time.now
 
         loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
         historico = loader.load sample_file 
 
-        puts "Total de ativos carregados: #{historico.ativos.length}"
+        puts "Total assets loaded: #{historic.asset.length}"
 
         loader.persist historico
 
         end_time = Time.now 
         elapsed_time = (end_time - start_time) * 1000.0
 
-        puts "Historico carregado em #{elapsed_time} ms!"
+        puts "Historical data loaded in #{elapsed_time} ms!"
       end
     
     end
