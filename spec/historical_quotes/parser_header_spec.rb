@@ -8,7 +8,7 @@ module HistoricQuotes
       @header = parser.parse sample_row
     end
 
-    it "deveria retornar nil se a linha nao comecar com 00" do
+    it "should return nil if the line does not start with 00" do
       sample_row = "05COTAHIST.2003BOVESPA 20040531                                                                                                                                                                                                                      "
       parser = ParserHeader.new
       header = parser.parse sample_row
@@ -16,15 +16,15 @@ module HistoricQuotes
       header.should be_nil
     end
 
-    it "deveria extrair header contendo o name do arquivo lido" do
+    it "should extract header filename" do
       @header.filename.should == "COTAHIST.2003"
     end
 
-    it "deveria extrair header contendo code origem" do
+    it "should extract header origin code" do
       @header.origin_code.should == "BOVESPA"
     end
     
-    it "deveria extrair header contendo a data de geracao do arquivo" do
+    it "should extract header created date" do
       @header.created_date.to_s.should eql Date.new(2004, 05, 31).to_s 
     end
   end

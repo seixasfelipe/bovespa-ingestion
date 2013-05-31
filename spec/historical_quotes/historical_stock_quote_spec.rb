@@ -17,24 +17,24 @@ module HistoricQuotes
       trailer
     }
 
-    let(:historico) { HistoricalStockQuote.new }
+    let(:historic) { HistoricalStockQuote.new }
 
-    it "deveria carregar dados contidos no header" do
-      historico.import_header header
+    it "should load header data" do
+      historic.import_header header
 
-      historico.filename.should == "COTA.HIST2003"
-      historico.origin_code.should == "BOVESPA"
-      historico.created_date.to_s.should eql Date.new(2004, 05, 31).to_s
+      historic.filename.should == "COTA.HIST2003"
+      historic.origin_code.should == "BOVESPA"
+      historic.created_date.to_s.should eql Date.new(2004, 05, 31).to_s
     end
 
-    it "deveria carregar dados contidos no trailer" do
-      historico.import_trailer trailer
+    it "should load trailer data" do
+      historic.import_trailer trailer
 
-      historico.stock_quotes_qty == 553
+      historic.stock_quotes_qty == 553
     end
 
-    it "deveria ser activerecord" do
-      historico.should be_kind_of(ActiveRecord::Base)
+    it "should be activerecord type" do
+      historic.should be_kind_of(ActiveRecord::Base)
     end
   end
 end

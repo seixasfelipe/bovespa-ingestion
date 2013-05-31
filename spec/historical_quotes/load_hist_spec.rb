@@ -19,59 +19,59 @@ module HistoricQuotes
     let(:header) { double(Header).as_null_object }
     let(:trailer) { double(Trailer).as_null_object }
 
-    it "deveria carregar o arquivo de exemplo" do
+    it "should load example file" do
       File.exists?(@file).should be_true
     end
 
-    it "deveria parsear header uma vez" do 
+    it "should parse the header only one time" do 
       parser_header.should_receive(:parse).once.and_return(Header.new)
 
       loader.load @file
     end
 
-    it "deveria parsear trailer uma vez" do
+    it "should parse the trailer only one time" do
       parser_trailer.should_receive(:parse).once.and_return(Trailer.new)
 
       loader.load @file
     end
 
-    it "deveria parsear ativo duas vezes" do
+    it "should parse quotes two times" do
       parser_stock_quote.should_receive(:parse).twice
 
       loader.load @file
     end
 
-    it "deveria retornar dois ativos ao carregar o arquivo" do
+    it "should return two stock quotes after reading the file" do
       loader = LoadHist.new parser_header, parser_trailer, ParserStockQuote.new
 
-      historico = loader.load @file
+      historic = loader.load @file
       
-      historico.stock_quotes.size.should == 2
-      historico.stock_quotes[0].ticker_symbol.should == "VALE3"
-      historico.stock_quotes[1].ticker_symbol.should == "VALE5T"
+      historic.stock_quotes.size.should == 2
+      historic.stock_quotes[0].ticker_symbol.should == "VALE3"
+      historic.stock_quotes[1].ticker_symbol.should == "VALE5T"
     end
 
-    it "deveria importar o header ao carregar o arquivo" do
+    it "should load header after reading the file" do
       header.stub(:filename).and_return("COTAHIST.2003")
       parser_header.stub(:parse).and_return(header)
 
-      historico = loader.load @file
-      historico.filename.should == "COTAHIST.2003"
+      historic = loader.load @file
+      historic.filename.should == "COTAHIST.2003"
     end
 
-    it "deveria importar o trailer ao carregar o arquivo" do
+    it "should load trailer after reading the file" do
       trailer.stub(:stock_quotes_qty).and_return(553)
       parser_trailer.stub(:parse).and_return(trailer)
 
-      historico = loader.load @file
-      historico.stock_quotes_qty.should == 553
+      historic = loader.load @file
+      historic.stock_quotes_qty.should == 553
     end
 
-    it "deveria persistir o historico" do
-      historico = double(HistoricalStockQuote).as_null_object
-      historico.should_receive(:save).once
+    it "should persists historical data" do
+      historic = double(HistoricalStockQuote).as_null_object
+      historic.should_receive(:save).once
 
-      loader.persist historico
+      loader.persist historic
     end
   end
 end
