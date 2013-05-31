@@ -1,12 +1,12 @@
 module HistoricoAtivos
   class CarregaHistorico
 
-    attr_accessor :parser_header, :parser_trailer, :parser_ativo
+    attr_accessor :parser_header, :parser_trailer, :parser_stock_quote
 
-    def initialize(parser_header, parser_trailer, parser_ativo)
+    def initialize(parser_header, parser_trailer, parser_stock_quote)
       @parser_header = parser_header
       @parser_trailer = parser_trailer
-      @parser_ativo = parser_ativo
+      @parser_stock_quote = parser_stock_quote
     end
 
     def load(filepath)
@@ -18,7 +18,7 @@ module HistoricoAtivos
 
       file.each { |line|
         historico.import_header @parser_header.parse(line) if line.start_with?("00")
-        historico.ativos << @parser_ativo.parse(line) if line.start_with?("01")
+        historico.stock_quotes << @parser_stock_quote.parse(line) if line.start_with?("01")
         historico.import_trailer @parser_trailer.parse(line) if line.start_with?("99")
       }
 

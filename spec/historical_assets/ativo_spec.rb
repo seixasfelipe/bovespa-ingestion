@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 module HistoricoAtivos
-  describe Ativo do
+  describe StockQuote do
 
-    it "deveria ser activerecord" do
-      ativo = Ativo.new
-      ativo.should be_kind_of(ActiveRecord::Base)
+    it "should be an activerecord" do
+      stock_quote = StockQuote.new
+      stock_quote.should be_kind_of(ActiveRecord::Base)
     end
 
   end

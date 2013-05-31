@@ -2,32 +2,32 @@ require 'date'
 require 'bigdecimal'
 
 module HistoricoAtivos
-  class ParserAtivo
+  class ParserStockQuote
     def parse(row)
-      read_ativo(row) if row.start_with?("01")
+      read_stock_quote(row) if row.start_with?("01")
     end
     
-    def read_ativo(row)
-      ativo = Ativo.new
-      ativo.date = read_data row
-      ativo.bdi_code = read_bdi_code row
-      ativo.ticker_symbol = read_ticker_symbol row
-      ativo.market_type = read_market_type row
-      ativo.name = read_name row
-      ativo.specification = read_specification row
-      ativo.prazo_termo = read_prazo_termo row
-      ativo.currency_ref = read_currency_ref row
-      ativo.opening_price = read_opening_price row
-      ativo.highest_price = read_highest_price row
-      ativo.lowest_price = read_lowest_price row
-      ativo.average_price = read_average_price row
-      ativo.close_price = read_close_price row
-      ativo.best_purchase_price = read_best_purchase_price row
-      ativo.best_sell_price = read_best_sell_price row
-      ativo.total_trading = read_total_trading row
-      ativo.total_trading_share= read_total_trading_share row
-      ativo.trading_volume = read_trading_volume row
-      ativo
+    def read_stock_quote(row)
+      stock_quote = StockQuote.new
+      stock_quote.date = read_data row
+      stock_quote.bdi_code = read_bdi_code row
+      stock_quote.ticker_symbol = read_ticker_symbol row
+      stock_quote.market_type = read_market_type row
+      stock_quote.name = read_name row
+      stock_quote.specification = read_specification row
+      stock_quote.prazo_termo = read_prazo_termo row
+      stock_quote.currency_ref = read_currency_ref row
+      stock_quote.opening_price = read_opening_price row
+      stock_quote.highest_price = read_highest_price row
+      stock_quote.lowest_price = read_lowest_price row
+      stock_quote.average_price = read_average_price row
+      stock_quote.close_price = read_close_price row
+      stock_quote.best_purchase_price = read_best_purchase_price row
+      stock_quote.best_sell_price = read_best_sell_price row
+      stock_quote.total_trading = read_total_trading row
+      stock_quote.total_trading_share= read_total_trading_share row
+      stock_quote.trading_volume = read_trading_volume row
+      stock_quote
     end
 
     def read_data(row)
@@ -105,10 +105,10 @@ module HistoricoAtivos
       BigDecimal.new(row[170..187])
     end
     
-    def converts_to_big_decimal(preco)
-      preco_s = preco.to_s
-      preco_s.insert(preco_s.size - 2, '.')
-      BigDecimal.new(preco_s)
+    def converts_to_big_decimal(price)
+      price_s = price.to_s
+      price_s.insert(price_s.size - 2, '.')
+      BigDecimal.new(price_s)
     end
   end
 end
