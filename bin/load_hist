@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'historical_assets'
+require 'historic_quotes'
 
 module HistoricQuotes
 
@@ -43,10 +43,10 @@ module HistoricQuotes
 
         start_time = Time.now
 
-        loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
-        historico = loader.load sample_file 
+        loader = LoadHist.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
+        historic = loader.load sample_file 
 
-        puts "Total assets loaded: #{historic.asset.length}"
+        puts "Total stock quotes loaded: #{historic.stock_quote.length}"
 
         loader.persist historico
 
