@@ -43,7 +43,7 @@ module HistoricQuotes
 
         start_time = Time.now
 
-        loader = LoadHist.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
+        loader = CarregaHistorico.new ParserHeader.new, ParserTrailer.new, ParserAtivo.new
         historico = loader.load sample_file 
 
         puts "Total assets loaded: #{historic.asset.length}"
