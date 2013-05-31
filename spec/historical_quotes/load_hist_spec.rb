@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module HistoricQuotes
-  describe CarregaHistorico do
+  describe LoadHist do
 
     before(:each) do
       @file = "sample/sample_cota_hist_2003.txt"
@@ -15,7 +15,7 @@ module HistoricQuotes
       p_stock_quote
     }
 
-    let(:loader) { CarregaHistorico.new parser_header, parser_trailer, parser_stock_quote }
+    let(:loader) { LoadHist.new parser_header, parser_trailer, parser_stock_quote }
     let(:header) { double(Header).as_null_object }
     let(:trailer) { double(Trailer).as_null_object }
 
@@ -42,7 +42,7 @@ module HistoricQuotes
     end
 
     it "deveria retornar dois ativos ao carregar o arquivo" do
-      loader = CarregaHistorico.new parser_header, parser_trailer, ParserStockQuote.new
+      loader = LoadHist.new parser_header, parser_trailer, ParserStockQuote.new
 
       historico = loader.load @file
       
