@@ -21,6 +21,9 @@ module HistoricQuotes
     begin
       require 'rake'
       StandaloneMigrations::Tasks.load_tasks
+      unless FileTest::directory?('db')
+        Dir.mkdir('db')
+      end
 
       migrate_path = File.expand_path("../../db/migrate", __FILE__)
       paths = Rails.application.config.paths
