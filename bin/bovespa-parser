@@ -4,7 +4,7 @@ require 'historical_quotes'
 
 module HistoricQuotes
 
-  if ARGV.size <= 0
+  case ARGV.first when '-h', '--help', '--usage', '-?', 'help', nil
 
     puts "Bovespa Ingestion allows you to import historical BM&F Bovespa stock exchange rates"
     puts "  Use: "
@@ -16,12 +16,9 @@ module HistoricQuotes
     puts ""
     puts "  For more informations:"
     puts "      https://github.com/seixasfelipe/bovespa-ingestion"
-
-  else
-
-    command = ARGV[0]
   
-    if command == 'install'
+  when 'install'
+    begin
       require 'rake'
       StandaloneMigrations::Tasks.load_tasks
 
@@ -31,8 +28,11 @@ module HistoricQuotes
       
       Rake::Task['db:migrate'].invoke
       # system("rake db:migrate")
-    elsif command == 'import'
-
+      puts "Installation complete"
+    rescue
+      puts "There were errors in the installation"
+    end
+  when 'import'
       if ARGV.size == 1
         puts "Please specify the file"
       else
@@ -55,8 +55,6 @@ module HistoricQuotes
 
         puts "Historical data loaded in #{elapsed_time} ms!"
       end
-    
-    end
 
   end
 
