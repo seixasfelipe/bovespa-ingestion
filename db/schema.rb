@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531005232) do
+ActiveRecord::Schema.define(:version => 20131130172812) do
 
   create_table "historical_stock_quotes", :force => true do |t|
     t.string   "filename"
@@ -30,16 +30,16 @@ ActiveRecord::Schema.define(:version => 20130531005232) do
     t.string   "name"
     t.string   "specification"
     t.string   "currency_ref"
-    t.decimal  "opening_price"
-    t.decimal  "highest_price"
-    t.decimal  "lowest_price"
-    t.decimal  "average_price"
-    t.decimal  "close_price"
-    t.decimal  "best_purchase_price"
-    t.decimal  "best_sell_price"
-    t.decimal  "total_trading"
-    t.decimal  "total_trading_share"
-    t.decimal  "trading_volume"
+    t.decimal  "opening_price",             :precision => 10, :scale => 2
+    t.decimal  "highest_price",             :precision => 10, :scale => 2
+    t.decimal  "lowest_price",              :precision => 10, :scale => 2
+    t.decimal  "average_price",             :precision => 10, :scale => 2
+    t.decimal  "close_price",               :precision => 10, :scale => 2
+    t.decimal  "best_purchase_price",       :precision => 10, :scale => 2
+    t.decimal  "best_sell_price",           :precision => 10, :scale => 2
+    t.decimal  "total_trading",             :precision => 10, :scale => 2
+    t.decimal  "total_trading_share",       :precision => 10, :scale => 2
+    t.decimal  "trading_volume",            :precision => 10, :scale => 2
     t.integer  "prazo_termo"
     t.integer  "historical_stock_quote_id"
     t.datetime "created_at",                :null => false
